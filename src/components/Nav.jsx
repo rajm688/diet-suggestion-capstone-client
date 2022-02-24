@@ -30,7 +30,7 @@ const Nav = () => {
   return (
     <Component>
       <Wrapper>
-        <Logo>FitSource.in</Logo>
+        <Logo>Get Set Fit</Logo>
         <Contact>
           <Phone>+91 98445686675</Phone>
           <Email>sanjai@fitsouce.in</Email>

@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>FitSource.In</Logo>
+        <Logo>Get Set Fit</Logo>
         <Moto>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo
           cumque expedita enim voluptatibus? Doloribus, esse natus quasi

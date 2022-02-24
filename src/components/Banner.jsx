@@ -57,7 +57,7 @@ const Banner = () => {
       <Wrapper>
         <Left>
           <Content>
-            <Heading>Welcome to FitSource</Heading>
+            <Heading>Welcome to Get Set Fit</Heading>
             <Text>Choose a diet plan to Continue</Text>
           </Content>
           <Flexontainer>
