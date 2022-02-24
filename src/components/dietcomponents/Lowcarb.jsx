@@ -28,7 +28,6 @@ const Details = styled.p`
   align-items: center;
   gap: 10px;
 `;
-const DeatilsText = styled.p``;
 const List = styled.li`
   padding-left: 50px;
 `;
