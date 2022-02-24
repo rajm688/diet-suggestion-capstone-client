@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 const Container = styled.div`
   height: 100vh;
@@ -27,7 +26,6 @@ const Link = styled.a`
   color: #868686;
 `;
 const NotFound = () => {
-  const history = useHistory();
   return (
     <Container>
       <Wrapper>

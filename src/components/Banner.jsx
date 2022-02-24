@@ -24,7 +24,6 @@ const Flexontainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
 `;
-const Dietlist = styled.div``;
 const Right = styled.div`
   flex: 1;
 `;

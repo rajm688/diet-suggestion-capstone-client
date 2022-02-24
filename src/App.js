@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Palio from "./components/dietcomponents/Palio";
 import Vegan from "./components/dietcomponents/Vegan";
 import Lowcarb from "./components/dietcomponents/Lowcarb";
