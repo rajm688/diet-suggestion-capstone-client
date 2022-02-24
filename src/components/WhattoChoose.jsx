@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Suggestion from "./Suggestion";
 const Container = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -42,22 +44,52 @@ const Button = styled.button`
 `;
 
 const WhattoChoose = () => {
+  const [foodStyle, setFoodestyle] = useState("nonveg");
+  const handleChange = (e) => {
+    setFoodestyle(e.target.value);
+    console.log(foodStyle);
+  };
+  const [age, setAge] = useState(0);
+  const [height, setheight] = useState(0);
+  const [weight, setweight] = useState(0);
+  console.log(age, height, weight);
+  const handlesubmit = () => {
+    var BMI = weight / height ** 2;
+    console.log(foodStyle, BMI);
+  };
   return (
     <Container>
       <Wrapper>
         <Form>
           <Lable>Choose the Diet plan</Lable>
-          <Select>
-            <Option>Vegan</Option>
-            <Option>NonVeg</Option>
+          <Select onChange={handleChange}>
+            <Option value="vegan">NonVeg</Option>
+            <Option value="nonveg">Vegan</Option>
           </Select>
           <Lable>Enter you Details</Lable>
-          <Input type="number" placeholder="Enter your Age" />
-          <Input type="number" placeholder="Enter your Heiight" />
-          <Input type="number" placeholder="Enter your Weight" />
-          <Button>Find the Better diet</Button>
+          <Input
+            onChange={(e) => setAge(e.target.value)}
+            type="number"
+            placeholder="Enter your Age"
+            max="100"
+          />
+          <Input
+            onChange={(e) => setheight(e.target.value)}
+            type="number"
+            placeholder="Enter your Height in Kg"
+            max="250"
+          />
+          <Input
+            onChange={(e) => setweight(e.target.value)}
+            type="number"
+            placeholder="Enter your Weight in Meters"
+          />
+          <Button onClick={handlesubmit} type="submit">
+            Find the Better diet
+          </Button>
         </Form>
       </Wrapper>
+      <Suggestion />
     </Container>
   );
 };

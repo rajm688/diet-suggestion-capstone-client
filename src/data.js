@@ -33,12 +33,12 @@ export const dietdata = [
 
 export const excercise = [
   {
-    img: "https://cdn-icons.flaticon.com/png/512/561/premium/561611.png?token=exp=1645521693~hmac=a810f4b1adc8dadb7e00c8ee34e62ae9",
+    img: "https://cdn-icons.flaticon.com/png/512/2382/premium/2382480.png?token=exp=1645704597~hmac=dd672d25a2409eb13787d8aa281ec68a",
     title: "Diet",
     desc: "A healthy diet is essential for good health and nutrition. It protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer.",
   },
   {
-    img: "https://cdn-icons.flaticon.com/png/512/384/premium/384301.png?token=exp=1645522379~hmac=6d30130316212e82c06dbe194304bda3",
+    img: "https://cdn-icons-png.flaticon.com/512/2983/2983413.png",
     title: "excercise",
     desc: "Regular physical activity can improve your muscle strength and boost your endurance. Exercise delivers oxygen and nutrients to your tissues and helps your cardiovascular system work more efficiently. ",
   },
