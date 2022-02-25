@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 const Container = styled.div`
   width: 100vw;
@@ -47,14 +48,36 @@ const Button = styled.button`
 const Link = styled.a``;
 
 const Login = () => {
+  const history = useHistory();
+  const [username, setUseranme] = useState("");
+  const [password, setPassword] = useState("");
+  const data = {
+    username,
+    password,
+  };
+  const handleSubmit = () => {
+    fetch("http://localhost:9000/user/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((data) => data.json())
+      .then(() => history.push("/"));
+  };
   return (
     <Container>
       <Wrapper>
         <Title>Welcome</Title>
         <Form>
-          <Input placeholder="username"></Input>
-          <Input placeholder="Password"></Input>
-          <Button>Log In</Button>
+          <Input
+            onChange={(e) => setUseranme(e.target.value)}
+            placeholder="username"
+          ></Input>
+          <Input
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          ></Input>
+          <Button onClick={handleSubmit}>Log In</Button>
           <Link>Forget password..?</Link>
           <Link>Creat a new Account</Link>
         </Form>

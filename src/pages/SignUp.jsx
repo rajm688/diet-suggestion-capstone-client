@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -46,17 +48,44 @@ const Button = styled.button`
 const Link = styled.a``;
 
 const SignUp = () => {
+  const history = useHistory();
+
+  const [username, setUseranme] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const data = {
+    username,
+    email,
+    password,
+  };
+  const handleSubmit = () => {
+    fetch("http://localhost:9000/user/signup", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((data) => data.json())
+      .then(() => history.push("/login"));
+  };
+
   return (
     <Container>
       <Wrapper>
         <Lable>Sign Up</Lable>
         <Form>
-          <Input placeholder="First Name" />
-          <Input placeholder="Last Name" />
-          <Input placeholder="UserName" />
-          <Input placeholder="Email" />
-          <Input placeholder="Password" />
-          <Button>SignUp</Button>
+          <Input
+            onChange={(e) => setUseranme(e.target.value)}
+            placeholder="UserName"
+          />
+          <Input
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          <Input
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <Button onClick={handleSubmit}>SignUp</Button>
           <Link>Log In</Link>
         </Form>
       </Wrapper>
