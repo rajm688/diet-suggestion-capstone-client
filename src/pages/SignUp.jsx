@@ -59,7 +59,7 @@ const SignUp = () => {
     password,
   };
   const handleSubmit = () => {
-    fetch("http://localhost:9000/user/signup", {
+    fetch("https://capstone-diet-suggestion.herokuapp.com/user/signup", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },

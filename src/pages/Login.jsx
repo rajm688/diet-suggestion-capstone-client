@@ -56,7 +56,7 @@ const Login = () => {
     password,
   };
   const handleSubmit = () => {
-    fetch("http://localhost:9000/user/login", {
+    fetch("https://capstone-diet-suggestion.herokuapp.com/user/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
