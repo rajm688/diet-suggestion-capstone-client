@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 const Component = styled.div`
   background-color: #ff0000a6;
   height: 8vh;
@@ -22,6 +23,7 @@ const Contact = styled.div`
   gap: 10px;
   align-items: center;
   justify-content: center;
+  ${mobile({ display: "none" })}
 `;
 const Phone = styled.span``;
 const Email = styled.span``;

@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { mobile } from "../responsive";
 const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -42,6 +43,7 @@ const IconContainer = styled.div`
 `;
 const Right = styled.div`
   flex: 1;
+  ${mobile({ display: "none" })}
 `;
 const OtherProducts = styled.h1``;
 const Location = styled.div``;

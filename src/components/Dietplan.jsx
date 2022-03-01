@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 const Component = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@ const Component = styled.div`
     transform: scale(1.05);
     cursor: pointer;
   }
+  ${mobile({ width: "100px", height: "100px" })}
 `;
 const Img = styled.img`
   width: 100%;
@@ -27,6 +29,7 @@ const Title = styled.span`
   color: white;
   font-size: 22px;
   text-transform: uppercase;
+  ${mobile({ fontSize: "14px" })}
 `;
 const Dietplan = ({ img, title, root }) => {
   const history = useHistory();

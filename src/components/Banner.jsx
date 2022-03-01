@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { dietdata } from "../data";
+import { mobile } from "../responsive";
 import Dietplan from "./Dietplan";
 const Component = styled.div`
   height: 91vh;
@@ -26,6 +27,7 @@ const Flexontainer = styled.div`
 `;
 const Right = styled.div`
   flex: 1;
+  ${mobile({ display: "none" })}
 `;
 const Image = styled.img`
   width: 100%;

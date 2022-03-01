@@ -78,8 +78,7 @@ const Login = () => {
             placeholder="Password"
           ></Input>
           <Button onClick={handleSubmit}>Log In</Button>
-          <Link>Forget password..?</Link>
-          <Link>Creat a new Account</Link>
+          <Link href="/signup">Creat a new Account</Link>
         </Form>
       </Wrapper>
     </Container>

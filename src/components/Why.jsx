@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { excercise } from "../data";
+import { mobile } from "../responsive";
 import Excercise from "./Excercise";
 const Component = styled.div`
   width: 100%;
@@ -11,6 +12,7 @@ const Component = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  ${mobile({ display: "none" })}
 `;
 const TitleContainer = styled.div``;
 

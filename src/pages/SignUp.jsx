@@ -45,7 +45,7 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 15px;
 `;
-const Link = styled.a``;
+const Link = styled.button``;
 
 const SignUp = () => {
   const history = useHistory();
@@ -67,7 +67,7 @@ const SignUp = () => {
       .then((data) => data.json())
       .then(() => history.push("/login"));
   };
-
+  console.log(data);
   return (
     <Container>
       <Wrapper>
@@ -86,7 +86,13 @@ const SignUp = () => {
             placeholder="Password"
           />
           <Button onClick={handleSubmit}>SignUp</Button>
-          <Link>Log In</Link>
+          <Link
+            onClick={() => {
+              history.push("/login");
+            }}
+          >
+            Log In
+          </Link>
         </Form>
       </Wrapper>
     </Container>

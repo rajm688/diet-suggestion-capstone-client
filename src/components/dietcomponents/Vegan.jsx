@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 import Footer from "../Footer";
 import Nav from "../Nav";
 import NewsLetter from "../NewsLetter";
@@ -17,16 +18,19 @@ const Title = styled.h1`
   margin: 0;
   padding: 20px;
   font-size: 34px;
+  ${mobile({ padding: "10px" })}
 `;
 const IntroText = styled.p`
   padding: 20px 30% 0 30px;
   font-size: 24px;
+  ${mobile({ padding: "2px", fontSize: "24px" })}
 `;
 const Details = styled.p`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 10px;
+  ${mobile({ flexDirection: "column" })}
 `;
 const List = styled.li`
   padding-left: 50px;
@@ -43,6 +47,7 @@ const What = styled.div`
   align-items: flex-start;
   gap: 10px;
   padding: 10px;
+  ${mobile({ width: "80%" })}
 `;
 const Vegan = () => {
   return (
