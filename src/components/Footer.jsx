@@ -19,7 +19,9 @@ const Left = styled.div`
   text-align: justify;
 `;
 const Logo = styled.h1``;
-const Moto = styled.p``;
+const Moto = styled.p`
+  font-size: 14px;
+`;
 const Center = styled.div`
   flex: 1;
 `;

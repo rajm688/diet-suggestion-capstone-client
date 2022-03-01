@@ -5,8 +5,8 @@ import { mobile } from "../responsive";
 const Component = styled.div`
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 200px;
+  width: 30%;
+  height: 30%;
   background-color: #ff0000a6;
   border-radius: 10px;
   transition: all 0.1s ease-in;
@@ -27,7 +27,7 @@ const Title = styled.span`
   padding: 10%;
   font-weight: 600;
   color: white;
-  font-size: 22px;
+  font-size: 1em;
   text-transform: uppercase;
   ${mobile({ fontSize: "14px" })}
 `;
