@@ -94,7 +94,7 @@ const WhattoChoose = () => {
           </Button>
         </Form>
       </Wrapper>
-      {bmi === 1 && foodStyle === "vegan" ? (
+      {bmi === 1 && foodStyle === "vegan" && age > 15 ? (
         <Res>Vegan</Res>
       ) : bmi === 2 && foodStyle === "nonveg" ? (
         <Res>palio</Res>
