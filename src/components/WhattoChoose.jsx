@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Suggestion from "./Suggestion";
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -42,7 +41,7 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 20px;
 `;
-
+const Res = styled.h1``;
 const WhattoChoose = () => {
   const [foodStyle, setFoodestyle] = useState("nonveg");
   const handleChange = (e) => {
@@ -52,10 +51,16 @@ const WhattoChoose = () => {
   const [age, setAge] = useState(0);
   const [height, setheight] = useState(0);
   const [weight, setweight] = useState(0);
-  console.log(age, height, weight);
+  const [bmi, setbmi] = useState(0);
   const handlesubmit = () => {
-    var BMI = weight / height ** 2;
-    console.log(foodStyle, BMI);
+    let bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    if (bmi < 18.6) {
+      setbmi(1); // under weight
+    } else if (bmi >= 18.6 && bmi < 24.9) {
+      setbmi(2); // normal
+    } else {
+      setbmi(3); // overweight
+    }
   };
   return (
     <Container>
@@ -76,20 +81,26 @@ const WhattoChoose = () => {
           <Input
             onChange={(e) => setheight(e.target.value)}
             type="number"
-            placeholder="Enter your Height in Kg"
+            placeholder="Enter your Height in meters"
             max="250"
           />
           <Input
             onChange={(e) => setweight(e.target.value)}
             type="number"
-            placeholder="Enter your Weight in Meters"
+            placeholder="Enter your Weight in kg"
           />
           <Button onClick={handlesubmit} type="submit">
             Find the Better diet
           </Button>
         </Form>
       </Wrapper>
-      <Suggestion />
+      {bmi === 1 && foodStyle === "vegan" ? (
+        <Res>Vegan</Res>
+      ) : bmi === 2 && foodStyle === "nonveg" ? (
+        <Res>palio</Res>
+      ) : (
+        <Res>Low Carb Diet</Res>
+      )}
     </Container>
   );
 };
