@@ -12,7 +12,7 @@ const Home = ({ user, token }) => {
     if (!token) {
       history.push("/login");
     }
-  }, [token]);
+  }, [token, history]);
   return (
     <div>
       <Nav user={user} />

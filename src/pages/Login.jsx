@@ -79,7 +79,7 @@ const Login = ({ setUser, setToken, token }) => {
     if (token) {
       history.push("/");
     }
-  }, [token]);
+  }, [token, history]);
   return (
     <Container>
       <Wrapper>
