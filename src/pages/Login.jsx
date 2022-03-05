@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 const Container = styled.div`
@@ -45,9 +45,14 @@ const Button = styled.button`
   font-size: 15px;
 `;
 
-const Link = styled.a``;
+const Link = styled.button`
+  border: none;
+  background-color: transparent;
+  color: green;
+  cursor: pointer;
+`;
 
-const Login = () => {
+const Login = ({ setUser, setToken, token }) => {
   const history = useHistory();
   const [username, setUseranme] = useState("");
   const [password, setPassword] = useState("");
@@ -62,8 +67,19 @@ const Login = () => {
       headers: { "Content-Type": "application/json" },
     })
       .then((data) => data.json())
-      .then(() => history.push("/"));
+      .then((item) => {
+        console.log(item);
+        setUser(item);
+        setToken(item.Token);
+        localStorage.setItem("token", item.Token);
+        history.push("/");
+      });
   };
+  useEffect(() => {
+    if (token) {
+      history.push("/");
+    }
+  }, [token]);
   return (
     <Container>
       <Wrapper>
@@ -78,7 +94,9 @@ const Login = () => {
             placeholder="Password"
           ></Input>
           <Button onClick={handleSubmit}>Log In</Button>
-          <Link href="/signup">Creat a new Account</Link>
+          <Link onClick={() => history.push("/signup")}>
+            Creat a new Account
+          </Link>
         </Form>
       </Wrapper>
     </Container>

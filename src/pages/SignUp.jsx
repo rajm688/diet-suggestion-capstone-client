@@ -45,7 +45,12 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 15px;
 `;
-const Link = styled.button``;
+const Link = styled.button`
+  border: none;
+  background-color: transparent;
+  color: green;
+  cursor: pointer;
+`;
 
 const SignUp = () => {
   const history = useHistory();

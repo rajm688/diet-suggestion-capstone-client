@@ -37,7 +37,7 @@ const Why = () => {
       <br />
       <ExcerciseContainer>
         {excercise.map(({ img, title, desc }) => (
-          <Excercise img={img} title={title} desc={desc} />
+          <Excercise key={img} img={img} title={title} desc={desc} />
         ))}
       </ExcerciseContainer>
     </Component>

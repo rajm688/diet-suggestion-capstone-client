@@ -64,7 +64,7 @@ const Banner = () => {
           </Content>
           <Flexontainer>
             {dietdata.map(({ img, title, root }) => (
-              <Dietplan img={img} title={title} root={root} />
+              <Dietplan key={img} img={img} title={title} root={root} />
             ))}
           </Flexontainer>
           <Button onClick={() => history.push("/what")}>

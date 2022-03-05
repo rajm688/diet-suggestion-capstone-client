@@ -10,44 +10,52 @@ import Ultralowfat from "./components/dietcomponents/Ultralowfat";
 import Atkins from "./components/dietcomponents/Atkins";
 import NotFound from "./pages/NotFound";
 import What from "./pages/What";
-
+import { useState } from "react";
 function App() {
+  const authToken = localStorage.getItem("token") || null;
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(authToken);
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home user={user} token={token} />
         </Route>
-        <Router path="/login">
-          <Login />
-        </Router>
-        <Router path="/signup">
+        <Route path="/login">
+          <Login
+            user={user}
+            setUser={setUser}
+            setToken={setToken}
+            token={token}
+          />
+        </Route>
+        <Route path="/signup">
           <SignUp />
-        </Router>
-        <Router path="/what">
+        </Route>
+        <Route path="/what">
           <What />
-        </Router>
-        <Router path="/paleo">
+        </Route>
+        <Route path="/paleo">
           <Palio />
-        </Router>
-        <Router path="/vegan">
+        </Route>
+        <Route path="/vegan">
           <Vegan />
-        </Router>
-        <Router path="/lowcarb">
+        </Route>
+        <Route path="/lowcarb">
           <Lowcarb />
-        </Router>
-        <Router path="/dukan">
+        </Route>
+        <Route path="/dukan">
           <Dukan />
-        </Router>
-        <Router path="/ultralowfat">
+        </Route>
+        <Route path="/ultralowfat">
           <Ultralowfat />
-        </Router>
-        <Router path="/atkins">
+        </Route>
+        <Route path="/atkins">
           <Atkins />
-        </Router>
-        <Router path="**">
+        </Route>
+        <Route path="**">
           <NotFound />
-        </Router>
+        </Route>
       </Switch>
     </Router>
   );
